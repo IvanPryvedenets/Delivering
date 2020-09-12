@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!--Slider or main image-->
+    <div class="slider">
+        <img class="slider-img" src="{% static 'delivering/img/slider-img.jpg' %}">
+    </div>
+
+    <div class="category">
+        <h1 class="category-title">Пончики</h1>
+        <div class="row">
+            {% for product in products %}
+                {% if product.category == 'Donuts' %}
+                    {% include 'delivering/card.html' %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="category">
+        <h1 class="category-title">Бургери</h1>
+        <div class="row">
+            {% for product in products %}
+                {% if product.category == 'Waffles' %}
+                    {% include 'delivering/card.html' %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="category">
+        <h1 class="category-title">Кава</h1>
+        <div class="row">
+            {% for product in products %}
+                {% if product.category == 'Coffee' %}
+                    {% include 'delivering/card.html' %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

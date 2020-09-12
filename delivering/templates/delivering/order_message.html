@@ -1,0 +1,43 @@
+<!--Message about order-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Message</title>
+</head>
+<body style="background: #fffcd6; padding: 10px;" >
+    <h2 style="color: #adadad;">Ваше замовлення під номером {{ order.id }}</h2>
+    <h3>Замовник: {{ order.name }} {{ order.last_name }}</h3>
+        <div style="width: 350px; height: auto; border: 1px solid #ffcfcc;">
+            <!--Table-->
+            <table cellpadding="7" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="left">Товар</th>
+                        <th align="center">Ціна</th>
+                        <th align="center">Кількість</th>
+                        <th align="center">Загалом</th>
+                    </tr>
+                </thead>
+
+                <!--Products cards-->
+                <tbody>
+                    {% for product in bought_products %}
+                        <tr>
+                            <td class="table-img" valign="top"><a href="{{ product.product.get_absolute_url }}"><img class="basket-img" src="{{ product.image.url }}"></a></td>
+                            <td class="table-title" valign="top"><a href="{{ product.product.get_absolute_url }}">{{ product.name }}</a></td>
+                            <td class="table-price" valign="top">{{ product.price }}</td>
+                            <td class="table-input" valign="top">{{ product.number }}</td>
+                            <td class="table-total_price" valign="top">{{ product.total_price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+
+
+            </table>
+        </div>
+
+    <h4>На суму {{ order.total_price }}</h4>
+</body>
+</html>

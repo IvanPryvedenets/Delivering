@@ -1,0 +1,554 @@
+body, header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Stiles for top */
+.top {
+    background: #4B1022;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+/* First col */
+#logo {
+    position: relative;
+    left: 85px;
+    width: 200px;
+}
+
+/* Second col */
+.col-6 h6 {
+    color: white;
+    float: right;
+    position: relative;
+    top: 17px;
+}
+
+/* Third col */
+.contacts-box {
+    float: left;
+    width: 100px;
+}
+
+.insta-icon, .face-icon {
+    position: relative;
+    top: 2px;
+    width: 50px;
+}
+
+.face-icon {
+    right: 10px;
+    width: 40px;
+}
+
+.basket-wrapper {
+    float: right;
+    right: 25%;
+    position: relative;
+    height: 100%;
+    width: 120px;
+}
+
+.basket p {
+    text-align: center;
+    border-left: 1px solid silver;
+    font-size: 15px;
+    color: white;
+    position: relative;
+    top: 15px;
+}
+
+.basket p:hover {
+    color: silver;
+    cursor: pointer;
+}
+
+.basket span {
+    color: white;
+    position: relative;
+    top: -4px;
+    left: 0.2px;
+    font-size: 13px;
+}
+
+.basket div {
+    position: absolute;
+    border: 1px solid #FFED00;
+    left: 86px;
+    top: 27px;
+    text-align: center;
+    width: 19px;
+    border-radius: 15px;
+    height: 19px;
+}
+
+/* Drop-down basket */
+.drop-down-wrapper {
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: none;
+    right: -75px;
+    top: 52px;
+    padding: 20px 5px;
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+}
+
+.basket-wrapper:hover .drop-down-wrapper {
+    display: block;
+}
+
+/* Stile for card in a drop-down basket */
+.drop-down-card {
+    margin: 5px;
+    float: left;
+    width: 97%;
+}
+
+.drop-down-img {
+    float: left;
+    width: 40px;
+}
+
+.drop-down-info {
+    padding: 13px 0 13px 5px;
+    float: left;
+    width: 85%;
+}
+
+.drop-down-name, .drop-down-price, .drop-down-number {
+    font-size: 15px;
+    line-height: 13px;
+    float: left;
+    width: 133px;
+}
+
+.drop-down-price, .drop-down-number {
+    padding: 0 2px;
+    width: auto;
+}
+
+.drop-down-number {
+    float: right;
+}
+
+.product-delete, .basket-info .product-delete {
+    border: 1px solid silver;
+    border-radius: 15px;
+    position: relative;
+    top: -3px;
+    float: right;
+    height: 17px;
+    width: 17px;
+}
+
+.product-delete span, .basket-info .product-delete span {
+    color: silver;
+    position: relative;
+    top: -4px;
+    left: 3.5px;
+}
+
+.product-delete span:hover {
+    cursor: pointer;
+    color: #4B1022;
+}
+
+/* Adding information in a drop-down basket */
+.drop-down-auxiliary {
+    border-top: 2px solid #4B1022;
+    float: left;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.drop-down-total_price {
+    border-bottom: 2px solid #4B1022;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.drop-down-buttons {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.drop-down-buttons button, .comment-form button, .basket-buttons button, .checkout-form button {
+    background: #4B1022;
+    border: none;
+    color: white;
+    padding: 6px 11px;
+    transition: 0.3s;
+}
+
+.drop-down-buttons a:last-child button, .basket-buttons a:last-child button {
+    float: right;
+}
+
+.drop-down-buttons button:hover, .comment-form button:hover, .basket-buttons button:hover {
+    color: silver;
+}
+
+/* Stiles for main content space */
+.slider {
+    background: silver;
+    position: relative;
+    top: -40px;
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+}
+
+.slider-img {
+    position: relative;
+    top: -200px;
+    width: 100%;
+
+}
+
+.content {
+    position: relative;
+    top: 50px;
+    display: block;
+    padding: 30px 0 30px 0;
+    margin: auto;
+    width: 1120px;
+}
+
+.category {
+    width: 100%;
+}
+
+.category-title {
+    border-bottom: 2px solid silver;
+    color: #4B1022;
+    margin: 35px 0 25px 0;
+    font-family: 'Open Sans Semibold';
+    font-size: 33px;
+    padding: 2px 0;
+}
+
+
+/* Stiles for product page */
+.product-page-content {
+    min-height: 900px;
+}
+
+.product-page-content .row {
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.product-page-content .row:nth-of-type(2), .product-page-content .row:nth-of-type(3) {
+    border-top: 1px solid silver;
+    padding: 30px 0 15px 0;
+    margin: auto;
+    width: 98.5%;
+}
+
+.product-img {
+    width: 100%;
+}
+
+.product-title, .col-sm-8 b, .product-page-content h5 {
+    color: #4B1022;
+}
+
+.col-sm-8 span {
+    color: #545454;
+}
+
+.col-sm-8 .card-form {
+    padding: 10px 0 15px 0;
+}
+
+.card-button {
+    background: #e482e8;
+    border: none;
+    color: white;
+    padding: 6px 11px;
+    transition: 0.3s;
+}
+
+.card-button:hover {
+    background: #a8327b;
+
+}
+
+.info-message {
+    opacity: 0;
+}
+
+/* Stile for comment stars */
+.fa-star {
+    color: silver;
+}
+
+.comment-form .fa-star:hover {
+    color: orange;
+}
+
+.comment-form .checked, .checked {
+    color: orange;
+}
+
+.comment-form {
+    width: 500px;
+}
+
+.comment-form h6 {
+    margin: 0;
+    padding-top: 5px;
+}
+
+.comment-form-fields p  {
+    display: inline-block;
+    margin-top: 5px;
+    width: 500px;
+}
+
+.comment-form p:first-of-type input {
+    width: 240px;
+}
+
+.comment-form p:first-of-type input:first-child {
+    float: right;
+}
+
+/* Stiles for card */
+.product-card {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.img-wrapper {
+    text-align: center;
+    margin: auto;
+    height: 40%;
+
+    width: 100%
+}
+
+.img-wrapper img {
+    width: 100%;
+}
+
+.card-info {
+    padding: 15px 15px 7px 15px;
+}
+
+.card-info h6, .card-info h5 {
+    color: #4B1022;
+}
+
+.card-info p {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.card-form {
+    padding: 0 15px 15px 15px;
+    width: 100%;
+}
+
+.card-form input {
+    border: 1px solid silver;
+    padding: 5px;
+}
+
+/* Stiles for basket page */
+.basket-img, .checkout-img {
+    height: 100px;
+    width: 100px;
+}
+
+.basket-content .top {
+    display: none;
+}
+
+.basket-content .content {
+    position: relative;
+    top: -10px;
+    min-height: 700px;
+}
+
+table {
+    width: 100%;
+}
+
+table tbody .table-input span {
+    position: relative;
+    left: 35px;
+}
+
+table tbody .table-input input {
+    position: relative;
+    left: 10px;
+}
+
+table tbody td:not(:first-child) {
+    padding: 45px 0;
+}
+
+table tbody tr {
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+
+table tbody .table-title a {
+    color: black;
+}
+
+.basket-info .product-delete {
+    top: 3px;
+}
+
+.basket-info .product-delete span {
+    top: -2px;
+}
+
+.basket-buttons {
+    width: 385px;
+}
+/* Stiles for checkout */
+.checkout {
+    min-height: 900px;
+}
+
+.checkout-form {
+    width: 80%;
+}
+
+.checkout-img {
+    height: 100px;
+}
+
+.checkout .top {
+    display: none;
+}
+
+.checkout .content {
+    position: relative;
+    top: -10px;
+    min-height: 700px;
+}
+
+.checkout-basket {
+    float: right;
+    height: auto;
+    width: 100%;
+}
+
+.checkout-product {
+    margin: 10px;
+}
+
+.additional-information {
+    font-size: 12px;
+}
+
+
+/* Stiles for footer */
+.footer {
+    background: #4B1022;
+    color: white;
+    height: 250px;
+    width: 100%;
+}
+
+.footer .row {
+    padding: 20px;
+    width: 100%;
+}
+
+.footer .row h5 {
+    border-bottom: 1px solid silver;
+    padding-bottom: 10px;
+}
+
+.footer .row .box {
+    position: relative;
+    top: 10px;
+}
+
+/* Adaptive design */
+@media screen and (max-width: 1200px) {
+  .basket p {
+    border: none;
+  }
+
+  .basket-wrapper {
+    right: 15%;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .basket p {
+    border: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .product-card .card-button {
+    width: 100px;
+    font-size: 10px;
+  }
+
+  .product-card input {
+    width: 50px;
+  }
+
+}
+
+@media screen and (max-width: 985px) {
+    .contacts-box {
+        display: none;
+    }
+
+    .basket-wrapper {
+        right: 25%;
+    }
+}
+
+@media screen and (max-width: 915px) {
+    .slider {
+        display: none;
+    }
+
+    .checkout-form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .col-6 {
+        display: none;
+    }
+
+    .basket-wrapper {
+        right: 0%;
+    }
+
+    #logo {
+        left: 10px;
+    }
+
+    .product-card .card-button {
+        font-size: 15px;
+        width: 141.6px;
+    }
+
+    .checkout .basket-buttons {
+        position: relative;
+        left: 20px;
+    }
+}
