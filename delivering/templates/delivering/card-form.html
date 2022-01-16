@@ -1,0 +1,17 @@
+<!--Card form-->
+<form class="card-form" method="POST" action="{% url 'ajax_engine' %}">{% csrf_token %}
+
+    <!--Number of product-->
+    <input type="number" min="1" max="10" maxlength="2" value="1">
+
+    <!--Button and product data-->
+    <button class="card-button" type="submit"
+            data-id="{{ product.id }}"
+            data-image="{{ product.image }}"
+            data-name="{{ product.name }}"
+            data-description="{{ product.description }}"
+            data-brand="{{ product.brand }}"
+            data-price="{{ product.price }}"
+    >Додати у кошик</button>
+
+</form>

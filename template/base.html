@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+
+<html lang="en">
+
+    <head>
+        <title>Some delivering service</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'delivering/css/style.css' %}">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+        <script src="{% static 'delivering/jquery/jquery.js' %}"></script>
+    </head>
+
+    <header>
+        <div class="top">
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="logo-wrapper">
+                        <a href="{% url 'main_url' %}"><img id="logo" src="{% static 'delivering/img/logo.jpg' %}"></a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h6><span>+38(069)75-34-543</span></h6>
+                </div>
+                <div class="col">
+                    <div class="contacts-box">
+                        <div class="social">
+                            <a href="https://www.instagram.com/ideal.shop_illiuk.s/">
+                                <img class="insta-icon" src="{% static 'delivering/img/Instagram_Icon.png' %}">
+                            </a>
+                            <a href="https://www.facebook.com/groups/4410068499101582">
+                                <img class="face-icon" src="{% static 'delivering/img/face-icon.png' %}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="basket-wrapper">
+                        <div class="basket">
+                            <p>Корзина</p>
+                            <div>
+                                <span>{{ products_count }}</span>
+                            </div>
+                        </div>
+                        <form class="basket-form" method="POST" action="{% url 'ajax_engine' %}">{% csrf_token %}
+                            <div class="drop-down-wrapper">
+                                <div class="drop-down-stile">
+                                    <div class="drop-down">
+                                        {% for product in selectedproducts %}
+                                            <div class="drop-down-card">
+                                                <a href="{{ product.product.get_absolute_url }}"><img class="drop-down-img" src="{{ product.image.url }}"></a>
+                                                    <div class="drop-down-info">
+                                                        <div class="drop-down-name">
+                                                            {{ product.name }}
+                                                        </div>
+                                                        <div class="drop-down-price">{{ product.price }}</div>
+                                                        <span class="product-delete" data-id="{{ product.unit_id }}"><span>&#215;</span></span>
+                                                        <div class="drop-down-number">{{ product.number }}шт.</div>
+                                                    </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="drop-down-auxiliary">
+                                    {% if products_count %}
+                                        <div class="drop-down-total_price">
+                                            Загалом: {{ total_price }}
+                                        </div>
+
+                                        <div class="drop-down-buttons">
+                                            <a href="{% url 'basket_url' %}"><button type="button">Корзина</button></a>
+                                            <a href="{% url 'checkout_url' %}"><button type="button">Оформити замовлення</button></a>
+                                        </div>
+                                    {% else %}
+
+                                        <div class="drop-down-buttons">
+                                            Ваша корзина порожня!
+                                        </div>
+
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="footer">
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h5>Про нас</h5>
+                </div>
+                <div class="col-sm-4">
+                    <h5>Соцмережі</h5>
+                    <div class="contacts-box">
+                        <a href="https://www.instagram.com/ideal.shop_illiuk.s/">
+                            <img class="insta-icon" src="{% static 'delivering/img/Instagram_Icon.png' %}">
+                        </a>
+                        <a href="https://www.facebook.com/groups/4410068499101582">
+                            <img class="face-icon" src="{% static 'delivering/img/face-icon.png' %}">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h5>Контакти</h5>
+                    <div class="box">
+                        <p>+38(069)75-34-543</p>
+                        <p>+38(069)75-34-543</p>
+                        <p>email: donutsburgers2018@gmail.com</p>
+                        <p>адреса: Луцьк, Відродження, 22а</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+    </body>
+
+</html>

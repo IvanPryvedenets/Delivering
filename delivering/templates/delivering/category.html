@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="category">
+        <div class="block-content">
+            <h1 class="category-title">{{ category }}</h1>
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == category %}
+                        {% include 'delivering/card.html' %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="block-content" style="margin-top: 50px;">
+            <h1 class="category-title">Вас може зацікавити</h1>
+            <div class="row">
+                {% for product in products %}
+                    {% if product.old_price %}
+                        {% include 'delivering/card.html' %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

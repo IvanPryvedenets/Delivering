@@ -1,0 +1,37 @@
+<!--Product card-->
+<div class="col-sm-3">
+    <div class="product-card">
+        <!--Image of card-->
+        <div class="img-wrapper">
+            <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}"></a>
+        </div>
+
+        <!--Block with information about product-->
+        <div class="card-info">
+            <div>
+                <h6>{{ product.name }}</h6>
+            </div>
+
+            <div>
+                <p class="product-description">{{ product.description }}</p>
+            </div>
+
+            <div>
+                <p class="product-status">{{ product.status }}</p>
+            </div>
+
+            <div>
+                <h5>{{ product.price }}<span> грн</span></h5>
+                {% if product.old_price %}
+                <div>
+                    <strike><b><p class="product-old_price">{{ product.old_price }}<span> грн</span></p></b></strike>
+                </div>
+            {% endif %}
+            </div>
+
+        </div>
+
+        <!--Card form, button and product data-->
+        {% include 'delivering/card-form.html' %}
+    </div>
+</div>

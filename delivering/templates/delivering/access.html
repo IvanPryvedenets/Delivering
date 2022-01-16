@@ -1,0 +1,13 @@
+<div class="content" style="height: 100%;">
+    <div class="access-form-wrapper" style="width: 100%; position: relative; top: 30%; text-align: center;">
+        <form method="GET" action="{% url 'access_form' %}">{% csrf_token %}
+            {{ form.name }}
+            <br>
+            <br>
+            {{ form.password }}
+            <br>
+            <br>
+            <button type="button">Login</button>
+        </form>
+    </div>
+</div>

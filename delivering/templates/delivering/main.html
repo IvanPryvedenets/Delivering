@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="main-page">
+    <!--Slider or main image-->
+    <div class="slider">
+        <img class="slider-img" src="{% static 'delivering/img/slider-img.jpg' %}">
+    </div>
+
+    <div class="block-content">
+        <div class="block-categories">
+            <h1 class="category-title">Категорії товарів</h1>
+            {% for category in categories %}
+                <div class="category-box">
+                    <button class="btn btn-primary">{{ category.field }}</button>
+                    <div>
+                        <div>
+                            <a href="{{ category.get_absolute_url }}">
+                                <img class="category-img" src="{{ category.image.url }}">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="category">
+            <h1 class="category-title">В наявності</h1>
+            <div class="row">
+                {% for product in products %}
+                    {% if product.status == "В наявності" %}
+                        {% include 'delivering/card.html' %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!--<div class="category">-->
+            <!--<h1 class="category-title">Категорія 2</h1>-->
+            <!--<div class="row">-->
+                <!--{% for product in products %}-->
+                    <!--{% if product.category == 'Category: Category 2' %}-->
+                        <!--{% include 'delivering/card.html' %}-->
+                    <!--{% endif %}-->
+                <!--{% endfor %}-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="category">-->
+            <!--<h1 class="category-title">Категорія 3</h1>-->
+            <!--<div class="row">-->
+                <!--{% for product in products %}-->
+                    <!--{% if product.category == 'Coffee' %}-->
+                        <!--{% include 'delivering/card.html' %}-->
+                    <!--{% endif %}-->
+                <!--{% endfor %}-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    </div>
+{% endblock %}
