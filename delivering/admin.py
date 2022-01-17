@@ -11,11 +11,11 @@ class AdminCategory(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('category', 'name', 'brand', 'status', 'description', 'old_price', 'price')
+    list_display = ('category', 'name', 'producer', 'status', 'description', 'old_price', 'price')
 
     fieldsets = (
         ('Information of a product', {
-            'fields': ('category', 'image', 'name', 'brand', 'status', 'description', 'old_price', 'price')
+            'fields': ('category', 'image', 'name', 'producer', 'status', 'description', 'old_price', 'price')
         }),
         ('Slug', {
             'classes': ('collapse',),
@@ -23,16 +23,16 @@ class ProductAdmin(admin.ModelAdmin):
         })
     )
 
-    prepopulated_fields = {"slug": ("category", "name", 'brand', 'status', 'price')}
+    prepopulated_fields = {"slug": ("category", "name", 'producer', 'status', 'price')}
 
 
 @admin.register(SelectedProduct)
 class SelectedProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'brand', 'price', 'total_price')
+    list_display = ('name', 'producer', 'price', 'total_price')
 
     fieldsets = (
         ('Information of a product', {
-            'fields': ('product', 'unit_id', 'image', 'name', 'description', 'brand', 'number', 'price', 'total_price')
+            'fields': ('product', 'unit_id', 'image', 'name', 'description', 'producer', 'number', 'price', 'total_price')
         }),
     )
 

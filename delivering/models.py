@@ -7,7 +7,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     field = models.CharField(max_length=50)
     image = models.ImageField(blank=True)
-    slug = models.SlugField(max_length=500, unique=True)
+    slug = models.SlugField(max_length=250, unique=True)
 
     def get_absolute_url(self):
         return reverse('category_url', kwargs={'slug': self.slug})
@@ -23,11 +23,11 @@ class Product(models.Model):
         ('Товар відсутный', 'Товар відсутный')
     )
 
-    slug = models.SlugField(max_length=500, unique=True)
+    slug = models.SlugField(max_length=250, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField()
     name = models.CharField(max_length=50)
-    brand = models.CharField(max_length=50, blank=True)
+    producer = models.CharField(max_length=50, blank=True)
     description = models.TextField(max_length=500)
     status = models.CharField(choices=STATUS, max_length=50)
     old_price = models.DecimalField(default=0.00, max_digits=5, decimal_places=2)
@@ -57,7 +57,7 @@ class SelectedProduct(models.Model):
     unit_id = models.IntegerField()
     image = models.ImageField()
     name = models.CharField(max_length=50)
-    brand = models.CharField(max_length=50, blank=True)
+    producer = models.CharField(max_length=50, blank=True)
     description = models.TextField(max_length=500)
     number = models.PositiveIntegerField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
@@ -87,7 +87,7 @@ class Order(models.Model):
     wish = models.TextField(max_length=500, blank=True)
     total_price = models.IntegerField()
     data = models.DateTimeField()
-    status = models.BooleanField(default=False)
+    status = models.BooleanField()
 
     def __str__(self):
         return '{} {} - {}'.format(self.name, self.last_name, self.email)
@@ -99,7 +99,7 @@ class BoughtProduct(models.Model):
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
     image = models.ImageField()
     name = models.CharField(max_length=50)
-    brand = models.CharField(max_length=50, blank=True)
+    producer = models.CharField(max_length=50, blank=True)
     description = models.TextField(max_length=500)
     number = models.PositiveIntegerField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)

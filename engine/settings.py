@@ -78,25 +78,36 @@ WSGI_APPLICATION = 'engine.wsgi.application'
 
 DATABASES = {
     'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'delivering',
-
-        'USER': 'd2503202027',
-
-        'PASSWORD': 'pa2720200325ss',
-
+        'USER': 'mysqluser',
+        'PASSWORD': 'ei7veeChu4bo!',
         'HOST': 'localhost',
-
         'PORT': '',
-
-    },
-
-    'OPTIONS': {
-        'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
-    },
+    }
 }
+
+# DATABASES = {
+#     'default': {
+#
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#
+#         'NAME': 'delivering',
+#
+#         'USER': 'd2503202027',
+#
+#         'PASSWORD': 'pa2720200325ss',
+#
+#         'HOST': 'localhost',
+#
+#         'PORT': '',
+#
+#     },
+#
+#     'OPTIONS': {
+#         'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
+#     },
+# }
 
 
 # Password validation
