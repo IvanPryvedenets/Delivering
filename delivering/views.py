@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 
-from engine.settings import EMAIL_HOST_USER
+from Delivering.settings import EMAIL_HOST_USER
 from django.core.mail import send_mail
 
 from django.contrib.auth import authenticate, login

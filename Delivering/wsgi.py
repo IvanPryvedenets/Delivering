@@ -1,5 +1,5 @@
 """
-WSGI config for engine project.
+WSGI config for Delivering project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,12 +12,12 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 
-path = '/home/ivan/Documents/Delivering/engine/setting.py'
+path = '/home/ivan/Documents/Delivering/Delivering/setting.py'
 if path not in sys.path:
     sys.path.insert(0, path)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'engine.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'Delivering.settings'
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'engine.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Delivering.settings')
 
 application = get_wsgi_application()
